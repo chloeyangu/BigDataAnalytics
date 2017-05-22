@@ -8,5 +8,5 @@ The great idea starts from the small. Some projects by applying data science, ma
 
 **Project #2 - The Airbnb Scoop**
  - Problem: to help Airbnb hosts determine factors which will affect their earnings and popularity, by looking at Airbnb listing data and individual guest reviews (not an average rating), understanding the amenities and location of listings that guests prefer.
- - Dataset: 17,369 listings in Barcelona with 95 features describing each listing; 388,184 reviews with 6 features. We translated non-English using a Python package called TextBlob; a list of 579 top attractions in Barcelona, their ratings, latitude and longitude from TripAdvisor.
+ - Dataset: 17,369 listings in Barcelona with 95 features describing each listing; 388,184 reviews with 6 features, we translated non-English using a Python package called TextBlob; a list of 579 top attractions in Barcelona, their ratings, latitude and longitude from TripAdvisor.
  - Model: Regression, Classification with decision tree, Sentiment analysis
