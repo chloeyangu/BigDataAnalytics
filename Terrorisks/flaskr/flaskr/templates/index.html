@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li class="active"><a href="{{ url_for('main') }}">Home</a></li>
+      <li><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>    
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3" style="background-image:url('static/images/home.jpeg');">
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article class="introtxt">
+      <h2 class="heading">BT4221 : Big Data</h2>
+      <p>Terrorist Attack Prediction</p>
+      <footer>
+        <ul class="nospace inline pushright">
+          <li><a class="btn" href="https://www.kaggle.com/START-UMD/gtd">Dataset</a></li>
+          <li><a class="btn inverse" href="{{ url_for('demo') }}">Live Demo</a></li>
+        </ul>
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <div class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace elements">
+      <li class="one_third first">
+        <article>
+          <figure><img src="static/images/home1.jpg" alt="">
+          </figure>
+          <div class="txtwrap">
+
+            <p>There has been a fivefold increase in terrorism casualties since the 9/11 incident in 2001. (MacAskill, 2017)</p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/home2.jpeg" alt="">
+          </figure>
+          <div class="txtwrap">
+    
+            <p>Terrorist attacks can also cause a significant amount of financial loss.</p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/home3.jpeg" alt="">
+          </figure>
+          <div class="txtwrap">
+
+            <p>Based on past trends, an attack on the city is does not occur singularly.  </p>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="wrapper row4">
+  <div class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace elements">
+      <li class="one_third first">
+        <article>
+          <figure><img src="static/images/home7.jpg" >
+          </figure>
+          <div class="txtwrap">
+            <p>For example, 9/11 was a series of 4 coordinated plane crashes.</p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/home5.jpeg">
+          </figure>
+          <div class="txtwrap">
+            <p>We need <b>fast</b> and <b>impactful</b> data based on the attack to preempt a subsequent attack from occurring.</p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/home4.jpeg">
+          </figure>
+          <div class="txtwrap">
+   <p>Once an attack is launched, we hope to be able to predict when the next attack will occur and send reinforcements before anything else can occur </p>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->

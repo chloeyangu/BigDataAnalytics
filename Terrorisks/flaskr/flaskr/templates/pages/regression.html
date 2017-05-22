@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li class="active"><a href="{{ url_for('main') }}">Home</a></li>
+      <li><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>    
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Linear Regression</h1>
+     
+        <p>Linear Regression Coefficient</p>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Attributes</th>
+              <th>Coefficients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Month</td>
+              <td>-1.73923957e-04  </td>
+            </tr>
+            <tr>
+              <td>Day</td>
+              <td>-1.68483111e-05  </td>
+            </tr>
+            <tr>
+              <td>Region</td>
+              <td>-1.83871397e-03  </td>
+            </tr>
+            <tr>
+              <td>Property Damage</td>
+              <td>-7.29810486e-03  </td>
+            </tr>
+            <tr>
+              <td>Extend of Property Damage</td>
+              <td>3.15071149e-02   </td>
+            </tr>
+                          <tr>
+              <td>Attack Type</td>
+              <td>1.20843515e-02    </td>
+            </tr>
+                          <tr>
+              <td>Weapon Type</td>
+              <td>-4.14460997e-03 </td>
+            </tr>
+            <tr>
+              <td>Number or Perpetrators</td>
+              <td>5.30998137e-05  </td>
+            </tr>
+            <tr>
+              <td>Specificity</td>
+              <td>7.99300431e-03  </td>
+            </tr>
+              
+          </tbody>
+        </table>
+      </div>
+        <p>The table above shows the coefficients of the different attributes for linear regression. However, as the R-squared value was very low- 0.03, we can infer that this model does not accurately explain the variation in success. </p>
+      <center><img src="static/images/lm.png" alt=""></center>
+      <br><br>
+        <p>From the sample of quantiles, we can see that the range of the different data points is spread across different values, and are congregated in 2 main clusters; clustering about 0 and 1. Furthermore, since the R- squared value is very low, we could possibly imply that the attributes may not have a linear relationship with the independent variable; i.e. the success of a terrorist. This is further supported by the residual plot below, whereby the residuals are not randomly distributed about the plot. There seems to be a pattern in the data. As such, we decided to use logistic regression for our data instead. </p>
+      <center><img src="static/images/lm1.png" alt=""></center>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Logistic Regression - Success</h1>
+      
+      <img src="static/images/lr1.png" alt="">
+      <p>From the accuracy results, we can see that the model is able to get 97% of the testing data predicted accurately. However, the accuracy of the null model is 96%. From the area under curve value, we can see the performance of the model is significantly high at  76% as well.</p>
+    
+      <img src="static/images/lr2.png" alt="">
+      <img src="static/images/lr3.png" alt="">
+      <p> From the output above, we can see that the significant attributes are mainly the months of the attack. Based on the historical data, if the attacks are carried out in February it has the highest chance of success. Based on the results, if an attack occurs in February, the probability of the attack being successful increases by 41% as compared to other months. With this knowledge, special forces should try to hold their safety drills or runs in February instead. This will step up the security and may hinder terrorists from attacking. March also had a significantly large value compared to the other months. Thus, we can see that generally if the attacks are carried out in march or february is has a higher chance of succeeding as compared to the other months.  </p>
+        <br>
+        <h1>Logistic Regression - Multiple</h1>
+      <img src="static/images/lr4.png" alt="">
+      <p>We ran the logistic regression model for the multiple attacks as well. Our model achieved a 83% accuracy value. However, the null model is 83% as well. After doing the 10 fold cross validation, we can see that the average accuracy of the model is 83%.</p>
+      <img src="static/images/lr5.png" alt="">
+      <p>Furthermore, the area under the curve value is 0.50. Thus this implies that the model is not really performing very well as it performs as well as the null model. In order to improve on the accuracy, we decided to build an ensemble learning method- Random Forests. </p>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

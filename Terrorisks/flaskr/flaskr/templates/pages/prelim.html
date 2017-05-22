@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li class="active"><a href="{{ url_for('main') }}">Home</a></li>
+      <li><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>    
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+    
+  <div class="hoc container clear"> 
+      <h1> Exploratory Analysis</h1>
+      <br><br>
+    <!-- ################################################################################################ -->
+    <ul class="nospace elements">
+      <li class="one_third first">
+        <article>
+          <figure><img src="static/images/attacks.png">
+          </figure>
+          <div class="txtwrap">
+              <h6 class="heading">Terrorist Attacks around the world</h6>
+              <p>The pie chart above shows the distribution of terrorist attacks across the world. It is evident that the Middle East and North Africa has the highest number of terrorist attacks. This could also be due to the fact that there are more terrorist groups in that area. </p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/distribution of weapon.png">
+          </figure>
+          <div class="txtwrap">
+            <h6 class="heading">Distribution of Weapon</h6>
+              <p>The most popular weapons are explosives, bomb, and dynamites followed by firearms. Thus, authorities can make use of this to better prepare themselves and train to fight such weapons.</p>
+          </div>
+        </article>
+      </li>
+           <li class="one_third">
+        <article>
+          <figure><img src="static/images/attackperyear.png" >
+          </figure>
+          <div class="txtwrap">
+              <h6 class="heading">Number of Attack Per Year</h6>
+              <p>From the graph above, it is also evident that the number of terrorist attacks have been increasing across the years and peaked in 2014. This shows the the importance of placing more resources to fight the terrorists. </p>
+          </div>
+        </article>
+      </li>
+    </ul>
+      </div>
+        <div class="hoc container clear"> 
+       <ul class="nospace elements">
+   <li class="one_third first">
+        <article>
+          <figure><img src="static/images/prelim1.png" >
+          </figure>
+          <div class="txtwrap">
+              <h6 class="heading">Number of People Killed per Attack</h6>
+              <p>The figure above is an interactive visualisation that allows users to explore the world map based on the number of casualties from terrorist attacks. As shown in the screenshot below, Iraq suffered the most number of deaths from 1970 to 2015 with a total of 58.8k deaths.  </p>
+          </div>
+        </article>
+      </li>
+            <li class="one_third">
+        <article>
+          <figure><img src="static/images/prelim2.png">
+          </figure>
+          <div class="txtwrap">
+            <h6 class="heading">Number of Failed Attack</h6>
+            <p>Another interesting thing we noted from the above visualisation was that the hotspot of high casualties tend to be within the same region. This is highlighted in a second screenshot in the figure below. 
+   </p>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/failed attack.png">
+          </figure>
+          <div class="txtwrap">
+            <h6 class="heading">Number of Failed Attack</h6>
+            <p>The number of failed attacks have also been increasing since 1985. The total number of failed attacks peaked in 2015. Thus, this could possibly imply that the securities have been tightening and authorities are more prepared to handle and prevent terrorist attacks. 
+   </p>
+          </div>
+        </article>
+      </li>
+    </ul>   
+      
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+
+      
+      <p>We plotted the violin plots for the important attributes against multiple; i.e. whether there were multiple attacks. From the first plot, we can see that generally if there was property damaged, as opposed to no property damaged, there is a chance that there will be a second attack. From the second plot, we can see that if property was damaged and the property damaged was likely more than USD$ 1 billion, all the cases have had subsequent attacks. Thus, if there are future huge catastrophic destruction of property, it is very likely that there will be another attack. 
+ </p>
+                <div class="hoc container clear"> 
+       <ul class="nospace elements">
+   <li class="one_third first">
+        <article>
+          <figure><img src="static/images/violin1.jpg" >
+          </figure>
+          <div class="txtwrap">
+          </div>
+        </article>
+      </li>
+            <li class="one_third">
+        <article>
+          <figure><img src="static/images/violin2.jpg">
+          </figure>
+          <div class="txtwrap">
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><img src="static/images/violin3.jpg">
+          </figure>
+          <div class="txtwrap">
+          </div>
+        </article>
+      </li>
+    </ul> 
+        </div>
+      </div>
+    <div class="hoc container clear"> 
+       <ul class="nospace elements">
+   <li class="one_third first">
+        <article>
+          <figure><img src="static/images/violin4.jpg" >
+          </figure>
+          <div class="txtwrap">
+          </div>
+        </article>
+      </li>
+
+    </ul> 
+        </div>
+
+    </main>
+    </div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

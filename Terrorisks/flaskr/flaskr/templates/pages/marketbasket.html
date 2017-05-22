@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li class="active"><a href="{{ url_for('main') }}">Home</a></li>
+      <li><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>    
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Market Basket Analysis</h1>
+      
+        
+        
+        <img class="imgr borderedbox inspace-5" src="static/images/marketbasket.png" alt="">
+        <br><br>
+        </ div>
+    </main>
+    </div>
+ <div class="wrapper row4">
+  <main class="hoc container clear">   
+      <div id="comments">
+
+        <h2>High Likelihood of Multiple Attack</h2>
+        <ul>
+          <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_12 - Others</a>
+              </header>
+              <div class="comcont">
+                <p>
+These are often homemade weapons. Many perpetrators are using towards homemade weapons to carry out their attacks. If perpetrators use homemade weapons, especially explosives, this could be an indicator that there will be subsequent attacks. However, this may not be a very impactful attribute as it would be tough to determine the type of explosive (homemade vs commercial) in the aftermath of an explosion. 
+                  </p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article>
+              <header>
+                <a href="#">Specificity_4 - Small City</a>
+              </header>
+              <div class="comcont">
+                <p>SAnother telling sign is if these attacks are in smaller regions or not in the town centre. If the attack first occurs in the less popular areas, there is a high chance that a subsequent attack may occur. We infer that this could be a diversion to bring the manpower away from the popular areas and thus make it easier for subsequent attacks to occur there. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">Suicide</a>
+              </header>
+              <div class="comcont">
+                <p>From this, we can infer that if the perpetrators had suicide intentions, we have to be prepared for a second or even third attack. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_8 - Incendiary / Explosions</a>
+              </header>
+              <div class="comcont">
+                <p>Incendiary and Explosions had a high lift value with regards to multiple attacks occurring. Thus, if the choice of weapon is explosives, there is a high chance that there will be a subsequent attack. Hence, authorities should try to evacuate people from high density areas near the attacks as soon as possible due to the fact that a second attack may be imminent. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">Attack_type_7 - FACILITY / INFRASTRUCTURE ATTACK</a>
+              </header>
+              <div class="comcont">
+                <p>This means that if the attack is on building there is a high chance that there will be multiple attacks. Infrastructure attacks refers to acts with the intention of causing harm to buildings or infrastructures like buildings, monuments, train stations etc. Thus, if there are such attacks, the authorities should be more alert to try to prevent a subsequent attack from occurring or evacuating people as soon as possible to minimise the casualties. For example, during the 9/11 attack, after the first of two twin towers were compromised, people in the other tower could be alert and evacuate the building as well.    
+                  </p>
+              </div>
+            </article>
+          </li>
+          </ul>
+        </div>
+      <div id="comments">
+        <h2>Low Likelihood of Multiple Attack</h2>
+        <ul>
+          <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_2 - Chemical</a>
+              </header>
+              <div class="comcont">
+                <p>From here we can infer that if the main weapon is of chemical nature, there will unlikely be a subsequent attack. This is useful because authorities can try to quickly send out a team to isolate the chemical from spreading as soon as possible. They can also quickly decide a safe location to evacuate all the people to without having to worry about a subsequent attack at that location. If a second attack was imminent, authorities would need to better plan their next actions to prevent the second attack from causing more harm. However, if no subsequent attacks will occur they can focus all their manpower on isolating the first attack. That being said, we should also always take precaution. 
+                  </p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_11 - Sabotage equipment</a>
+              </header>
+              <div class="comcont">
+                <p>Similarly, if the main weapon means was a sabotage of equipment, there is a lower chance that a second attack will occur based on historical data. However, a sabotage of equipment can be prevented with strict security and regular checks of the equipment. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_7 - Fake weapons</a>
+              </header>
+              <div class="comcont">
+                <p>If the main weapon type was fake weapons, there is also a lower chance that a second attack will occur. However, based on the dataset, there were only 2 instances of the perpetrators using fake weapons for the attacks. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">Main_weapon_type_3 - Radiological</a>
+              </header>
+              <div class="comcont">
+                <p>There were no instances whereby the main weapon used was radiological. As such, there were 0 rules of radiological weapons leading to multiple attacks. 
+                  </p>
+              </div>
+            </article>
+          </li>
+                      <li>
+            <article>
+              <header>
+                <a href="#">attack_type_1 - Assassination</a>
+              </header>
+              <div class="comcont">
+                <p>Usually if the attack was an assassination attempt, there is a low likelihood of a subsequent attack occurring, unless there are multiple assassination targets.   
+                  </p>
+              </div>
+            </article>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    </div>
+    
+            
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

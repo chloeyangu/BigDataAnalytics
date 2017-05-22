@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li class="active"><a href="{{ url_for('main') }}">Home</a></li>
+      <li><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>    
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Random Forest - Predicting the Success</h1>
+      <img src="static/images/rf1.png" alt="">
+      <p>In predicting the success of the attacks, our random forest model achieved an accuracy of 99%. This is slightly higher than our logistic regression model. Furthermore, the area under the ROC curve achieved a value of 0.77, which just meets our expectations of a decent model. </p>
+      
+        <p>We conducted a 10 fold cross validation and obtained the following results. </p>
+      <img src="static/images/rf2.png" alt="">
+      <p>From the output below, it is interesting to note that the attack type has the largest impact on the success of an attack. Based on the output, if the attack type was an assassination, kidnapping or hostage taking, or bombing it has a higher chance of success. From the output, assassinations have a 20% higher chance of success than other attacks. For every perpetrator present, the chances of success increases by 5% as well. </p>
+        
+      <img src="static/images/rf3.png" alt="">
+      <p>Thus, we proceeded to build the model to predict if there will be multiple attacks. </p>
+      </div>
+    </main>
+</div>
+    
+<div class="wrapper row4">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      
+        <h1>Random Forest - Predicting Multiple Attacks</h1>
+       <img src="static/images/rf4.png" alt="">
+      <p>For the second random forest model, our model obtained an accuracy of 91%. The area under the ROC curve value was also 0.70, implying that the model performs well. However, when we conducted the 10 fold cross validation, we noticed that the accuracy was not good.</p>
+      <img src="static/images/rf5.png" alt="">
+      <p>As such, we suspected over fitting in the trees. Hence, after plotting the max depth of the trees, we added in a new parameter to control the depth of the trees ( max_depth). </p>
+      <img src="static/images/rf6.png" alt="">
+      <p>Based on the graph, the optimal depth of leaf nodes seems to be approximately 15. Thus, we reran the code with the maximum depth set at 16. The results were as shown below:</p>
+      <img src="static/images/rf7.png" alt="">
+        <p>There was a drop in the accuracy from 99% to 90%. However, most importantly, our model still performs better than the null model. The performance also dropped to 0.64.  However, this model eliminates the possibilities of over fitting and would be a better fit for new data. Thus, we decided to use this model instead. </p>
+      <img src="static/images/rf8.png" alt="">
+      <p>We can deduce that the important features that we can infer that multiple attacks will occur is the number of perpetrators, the extent of the property damaged, months and region. Similar to the success of an attack, the number of perpetrators also affects if there will be multiple attacks. For every additional perpetrator present, the chances of an additional attack increases by 8%. If the property has been damaged very badly, the chances of a subsequent attack increases by 4%. </p>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

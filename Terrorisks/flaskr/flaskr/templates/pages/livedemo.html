@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li ><a href="{{ url_for('main') }}">Home</a></li>
+      <li ><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+          <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>  
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li class="active"><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+        
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+
+    </div>
+    </main>
+</div>
+<form action="" method="post">
+<div class="wrapper row2">
+        
+      <nav id="mainav1" class="hoc clear"> 
+      <br> 
+      <h1>Live Demonstration</h1>
+      <p>Please enter the details below : </p>
+      <br>
+      <ul class="clear"> 
+      
+      <li>Day
+      <select name="Day">
+                            <option value= 1> 1 </option>
+                            <option value= 2> 2 </option>
+                            <option value= 3> 3 </option>
+                            <option value= 4> 4 </option>
+                            <option value= 5> 5 </option>
+                            <option value= 6> 6 </option>
+                            <option value= 7> 7 </option>
+                            <option value= 8> 8 </option>
+                            <option value= 9> 9 </option>
+                            <option value= 10> 10 </option>
+                            <option value= 11> 11 </option>
+                            <option value= 12> 12 </option>
+                              <option value= 13> 13 </option>
+                              <option value= 14> 14 </option>
+                              <option value= 15> 15 </option>
+                              <option value= 16> 16 </option>
+                              <option value= 17> 17 </option>
+                              <option value= 18> 18 </option>
+                              <option value= 19> 19 </option>
+                              <option value= 20> 20 </option>
+                              <option value= 21> 21 </option>
+                              <option value= 22> 22 </option>
+                              <option value= 23> 23 </option>
+                              <option value= 24> 24 </option>
+                              <option value= 25> 25 </option>
+                              <option value= 26> 26 </option>
+                              <option value= 27> 27 </option>
+                              <option value= 28> 28 </option>
+                              <option value= 29> 29 </option>
+                              <option value= 30> 30 </option>
+                              <option value= 31> 31 </option>
+          
+        </select>
+        </li>
+      <li>Month
+      <select name="Month">
+                            <option value= 1> January </option>
+                            <option value= 2> February </option>
+                            <option value= 3> March </option>
+                            <option value= 4> April </option>
+                            <option value= 5> May </option>
+                            <option value= 6> June </option>
+                            <option value= 7> July </option>
+                            <option value= 8> August </option>
+                            <option value= 9> September </option>
+                            <option value= 10> October </option>
+                            <option value= 11> November </option>
+                            <option value= 12> December </option>
+        </select>
+        </li>
+        
+        <li >Region
+        <select name="Region">
+                            <option value= 1> North America </option>
+                            <option value= 2> Central America and Caribbean </option>
+                            <option value= 3> South America </option>
+                            <option value= 4> East Asia </option>
+                            <option value= 5> South East Asia </option>
+                            <option value= 6> South Asia </option>
+                            <option value= 7> Central Asia </option>
+                            <option value= 8> Western Europe </option>
+                            <option value= 9> Eastern Europe </option>
+                            <option value= 10> Middle East </option>
+                            <option value= 11> Sub-Saharan Africa </option>
+                            <option value= 12> Australia and Oceaniar </option>
+        </select>
+        </li>
+                    
+        <li>Specificity
+        <select name="spec">
+                            <option value= 1> Big City </option>
+                            <option value= 2> Small City </option>
+                            <option value= 3> Small Town </option>
+                            <option value= 4> Outside Main Town Area </option>
+                            <option value= 5> Outside Small City Main Town Area</option>
+        </select>
+        </li>
+                  
+        <li >Attack Type
+        <select name="att">
+                            <option value= 1> Assasination </option>
+                            <option value= 2> Hijacking </option>
+                            <option value= 3> Kidnapping </option>
+                            <option value= 4> Barricade Incident </option>
+                            <option value= 5> Bombing/Explosion </option>
+                            <option value= 6> Armed Assault </option>
+                            <option value= 7> Unarmed Assault</option>
+                            <option value= 8> Facility/Infrastructure </option>
+                            <option value= 9> Unknown </option>
+        </select>
+        </li>
+        
+        <li >Main Weapon
+        <select name="weapon">
+                            <option value= 1> Biological </option>
+                            <option value= 2> Chemical </option>
+                            <option value= 3> Radiological </option>
+                            <option value= 4> Nuclear</option>
+                            <option value= 5> Firearms </option>
+                            <option value= 6> Explosives </option>
+                            <option value= 7> Fake Weapons </option>
+                            <option value= 8> Incendiary </option>
+                            <option value= 9> Melee </option>
+                            <option value= 10> Vehicle </option>
+                            <option value= 11> Sabotage Equipment </option>
+                            <option value= 12> Other </option>
+                            <option value= 13> Unknown </option>
+        </select>
+        </li>
+          
+         
+      <li>Property Damage
+      <select name="Property">
+                            <option value= 1> Yes </option>
+                            <option value= 0> No </option>
+                            <option value= -99> Unknown </option>
+          
+        </select>
+        </li>
+        
+      <li>Extent of Property Damage
+      <select name="extproperty">
+      <option value= 1> Catastrophic </option>
+      <option value= 2> Major </option>
+      <option value= 3> Minor </option>
+      <option value= 4> Unknown </option>
+          
+        </select>
+        </li>
+        
+          
+        <li >Number of Perpetrators
+        <input type = text name="numprep" style="background-color:#82B440">
+        </li>         
+ 
+          
+        </ul>    
+          
+    <br><br>
+          <li><input type="submit" value ="Submit"></li>
+    
+
+      </nav>
+        <br>
+
+</div>
+</form>   
+    
+<div class="wrapper row4">
+  <div class="hoc container clear"> 
+      
+    <!-- ################################################################################################ -->
+      <h1> Results</h1><br>
+          <center><img src={{plot}} alt="" align="middle"></center>
+      <br><br>
+    <ul class="nospace elements">
+      <li class="one_third first">
+          <article>
+          <div class="txtwrap">
+            <li><h6 class="heading">Linear Regression </h6></li>
+            <li>{{result}}</li>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <div class="txtwrap">
+              <li><h6 class="heading">Logistic Regression</h6></li>  
+              <li>{{lr}}</li>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+          <article>
+          <div class="txtwrap">
+            <li><h6 class="heading">Random Forest</h6></li>
+            <li>{{rf}}</li>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear">    </div>
+  
+  </div>
+
+</div>
+        
+        
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

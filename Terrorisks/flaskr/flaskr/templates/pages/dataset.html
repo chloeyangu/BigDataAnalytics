@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terrorist Attack Prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href={{url_for('static', filename="layout/styles/layout.css")
+}} rel="stylesheet" type="text/css" media="all">
+<link href={{url_for('static', filename="layout/styles/framework.css")}} rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_center">
+    <center>  
+        <ul class="nospace inline pushright">
+        <li> Lai Shumin | A0131084R</li>
+        <li> Martinus Tjitra | A0126577W</li>
+      </ul>
+    </center>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="{{ url_for('main') }}">Terrorisks</a></h1>
+    </div>
+
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+        
+      <li ><a href="{{ url_for('main') }}">Home</a></li>
+      <li class="active"><a href="{{ url_for('dataset') }}">Dataset</a>
+      <li><a class="drop" href="#">Model</a>
+        <ul>
+        <li><a href="{{ url_for('prelim') }}">Exploratory Analysis</a></li>  
+          <li><a href="{{ url_for('regression') }}">Regression</a></li>
+          <li><a href="{{ url_for('randomforest') }}">Random Forest</a></li>
+          <li><a href="{{ url_for('marketbasket') }}">Market Basket Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('demo') }}">Live Demo</a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+        <h1>Dataset</h1>
+      
+      <p>The data consists of 157,000 instances. The dataset was obtained from the Kaggle website.  The raw data has a total of 137 different columns. During the preprocessing, we will analyse each column and see if it is necessary for the analysis. This data will be cleaned via data preprocessing and sanitisation. </p>
+    
+        
+      <p> Due to the large number of attributes, we have summarised in general the different types of attributes below : </p>
+
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>s/n</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Event ID</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Date information (year, month, day)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Geographic information (country, state, city, longitude, latitude, etc.)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Attack type</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Success/Failure</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Type of Weapons Used</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Hostage Situation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <img src="static/images/kaggle.png" alt="">
+        
+    <h1>Database</h1>
+      
+      <p>For this project, we connected our data to the sqlite database, and made use of python jupyter notebook to retrieve the data and conduct the analysis. The screenshot below shows the database connection.  </p>
+      <img src="static/images/database.jpg" alt="">
+        <br><br>
+        <h1>Data Preprocessing</h1>
+      
+      <p>In order to conduct a thorough and accurate analysis, we had to clean our data. We selected the attributes based on the whether these attributes could be obtained immediately after the first attack. As such, the final attributes were as follows.  </p>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>s/n</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Event ID</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Date information (month and day)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Geographic information (specificity and region)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Attack type</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Success/Failure</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Type of Weapons Used</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Number of Perpetrators</td>
+            </tr>
+             <tr>
+              <td>8</td>
+              <td>Property Damage</td>
+            </tr>
+                         <tr>
+              <td>9</td>
+              <td>Extend of Property Damage</td>
+            </tr>
+                                     <tr>
+              <td>10</td>
+              <td>Multiple</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <p> We then removed all the rows with missing data points from the above attributes. We then converted some of the attributes which were of categorical nature into dummy variables to allow us to conduct the data analysis. 
+
+For the association rules, we had to change the data into a binary format before the rules could be run. Thus, the dataset was duplicated and the data had to be formatted accordingly. </p>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>
